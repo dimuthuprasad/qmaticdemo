@@ -1,3 +1,4 @@
+import { LANGUAGE_CHANGE } from './../redux/language-change.reducer';
 import { IRoute } from './../models/route';
 import { Store } from '@ngrx/store';
 import { AppState } from './../redux/app-state';
@@ -16,13 +17,13 @@ export class AppComponent {
 
   constructor(private translate: TranslateService, private store: Store<AppState> ) {
     this.translate.setDefaultLang('en');
-    this.route = this.store.select( state => state.route);
+    this.route = this.store.select( state => state.language);
   }
 
   switchLanguage(language: string) {
     this.translate.use(language);
     this.store.dispatch( {
-      type : "ROUTE_CHANGE",
+      type :LANGUAGE_CHANGE,
       payload: language
     });
   }

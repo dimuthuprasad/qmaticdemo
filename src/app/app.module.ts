@@ -13,7 +13,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { StoreModule } from '@ngrx/store';
 import { userListReducer } from '../redux/user-list.reducer';
-import { routeReducer } from '../redux/route.reducer';
+import { languageChangeReducer } from '../redux/language-change.reducer';
 
 import rootReducer from '../redux/root-reducer';
 

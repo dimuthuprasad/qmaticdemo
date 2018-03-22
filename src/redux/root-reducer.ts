@@ -1,4 +1,4 @@
 import { userListReducer } from "./user-list.reducer";
-import { routeReducer } from "./route.reducer";
+import { languageChangeReducer } from "./language-change.reducer";
 
-export default  {usersList: userListReducer, route : routeReducer}
+export default  {usersList: userListReducer, language : languageChangeReducer}
