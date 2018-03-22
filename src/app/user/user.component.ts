@@ -2,7 +2,7 @@ import { IUser } from './../../models/user';
 import { Component, OnInit, Input  } from '@angular/core';
 
 @Component({
-  selector: 'qm-user-list',
+  selector: 'qm-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss'],
 

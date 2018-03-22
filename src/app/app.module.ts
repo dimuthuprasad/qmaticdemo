@@ -2,8 +2,6 @@ import { UserService } from './user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-
 import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -13,6 +11,11 @@ import { UserComponent } from './user/user.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { StoreModule } from '@ngrx/store';
+import { userListReducer } from '../redux/user-list.reducer';
+import { routeReducer } from '../redux/route.reducer';
+
+import rootReducer from '../redux/root-reducer';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,6 +39,9 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpModule,
+    StoreModule.forRoot(
+      rootReducer
+    ),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only

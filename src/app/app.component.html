@@ -1,8 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
+  <h1 [ngStyle]="{'color': (route | async).name == 'en' ? 'red' : 'green'}">
     {{ 'title' | translate }}
   </h1>
+  <div> {{ route.name | async}}</div>
     <nav class="home-nav">
       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
 true}">Home</a>    
